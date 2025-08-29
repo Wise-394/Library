@@ -5,6 +5,7 @@ const openModalButton = document.querySelector("#open-modal")
 const dialog = document.querySelector("dialog")
 const addBookButton = document.querySelector("#form > button")
 const form = document.querySelector("#form")
+const deleteButton = document.querySelector("#close-button")
 function Book(id, title, author, pages, read) {
     this.id = id
     this.title = title
@@ -104,5 +105,7 @@ openModalButton.addEventListener("click", openModal)
 form.addEventListener("submit", (e) => {
     addBook(e)
 })
+deleteButton.addEventListener("click", () => closeModal())
+
 addBookToLibrary("Example Book", "me", 100, true)
 displayBook()

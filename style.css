@@ -1,3 +1,12 @@
+:root {
+    --rose-ebony: #63474D;
+    --old-rose: #AA767C;
+    --buff: #D6A184;
+    --tangerine: #FFA686;
+    --peach: #FEC196;
+
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -11,30 +20,42 @@ body {
 
 }
 
-body>* {
-    outline: 1px black solid;
-}
+
 
 header {
     display: flex;
     justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: var(--peach);
+    border-bottom: 2px solid white;
 }
 
 main {
     padding: 15px 5%;
+    background-color: var(--buff);
 }
 
 .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 10px 2%;
+    background-color: white;
+    height: 100%;
+    padding: 1% 1%;
+    border-radius: 10px;
+    overflow-y: scroll;
 }
 
 .card {
-    border: 1px black solid;
+    border: 5px solid var(--rose-ebony);
     border-radius: 10px;
     padding: 10px 10%;
+    height: 200px;
+    border-left: solid 15px var(--tangerine);
 }
+
 dialog {
     position: fixed;
     top: 50%;
@@ -43,13 +64,15 @@ dialog {
     height: 50%;
     padding: 20px 5%;
 }
-dialog > form {
+
+dialog>form {
     display: flex;
     flex-direction: column;
     align-items: start;
     gap: 5%;
 }
-form > div {
+
+form>div {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -63,4 +86,19 @@ dialog::backdrop {
 footer {
     display: flex;
     justify-content: center;
+    border-top: 2px solid white;
+    background-color: var(--peach);
+    align-items: center;
+}
+
+footer > button {
+    height: 50px;
+    flex: 0 1 100px;
+    position: relative;
+}
+footer > a {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 5px 10px;
 }

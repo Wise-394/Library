@@ -1,6 +1,9 @@
 const myLibrary = []
 
 const cardContainer = document.querySelector(".card-container")
+const openModalButton = document.querySelector("#open-modal")
+const dialog = document.querySelector("dialog")
+const addBookButton = document.querySelector("dialog > button")
 
 function Book(id, title, author, pages, read) {
     this.id = id
@@ -17,9 +20,6 @@ function addBookToLibrary(title, author, pages, read) {
     const newBook = new Book(id, title, author, pages, read)
     myLibrary.push(newBook)
 }
-
-addBookToLibrary("test", "me", 123, true)
-addBookToLibrary("test1", "me1", 123, true)
 
 function displayBook() {
     myLibrary.forEach((book) => {
@@ -45,6 +45,23 @@ function displayBook() {
         newCard.appendChild(read)
         
     })
-
 }
+function openModal(){
+    dialog.showModal()
+}
+
+function closeModal(){
+    dialog.close()
+}
+
+function addBook(){
+    // add book
+    closeModal()
+}
+
+openModalButton.addEventListener("click", openModal)
+addBookButton.addEventListener("click", addBook)
+
+addBookToLibrary("test", "me", 123, true)
+addBookToLibrary("test1", "me1", 123, true)
 displayBook()

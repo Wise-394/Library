@@ -15,7 +15,6 @@
 
 body {
     display: grid;
-    grid-template-rows: 1fr 8fr 1fr;
     min-height: 100vh;
 
 }
@@ -23,6 +22,7 @@ body {
 
 
 header {
+    height: 5vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,26 +34,38 @@ header {
 
 main {
     padding: 15px 5%;
-    background-color: var(--buff);
+    background-color: white;
+    height: 80vh;
 }
 
 .card-container {
+    border: 3px solid var(--buff);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 10px 2%;
     background-color: white;
-    height: 100%;
     padding: 1% 1%;
     border-radius: 10px;
     overflow-y: scroll;
+    height: 100%;
 }
 
 .card {
     border: 5px solid var(--rose-ebony);
     border-radius: 10px;
-    padding: 10px 10%;
+    padding: 10px 20px;
     height: 200px;
     border-left: solid 15px var(--tangerine);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.card:hover{
+    transform: scale(1.05);
+}
+.card>p:first-child {
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 dialog {
@@ -61,15 +73,29 @@ dialog {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 50%;
-    padding: 20px 5%;
+    height: 30%;
+    padding: 20px 1%;
+    border: 5px solid var(--rose-ebony);
+    border-radius: 10px;
+    border-left: solid 15px var(--tangerine);
 }
+
 
 dialog>form {
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: 5%;
+    gap: 3%;
+    justify-content: center;
+}
+
+form>button {
+    margin: 10px 0;
+    width: 100%;
+}
+
+input{
+    padding: 3px 0;
 }
 
 form>div {
@@ -84,21 +110,27 @@ dialog::backdrop {
 }
 
 footer {
+    height: 15vh;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     border-top: 2px solid white;
     background-color: var(--peach);
     align-items: center;
 }
 
-footer > button {
-    height: 50px;
-    flex: 0 1 100px;
+footer>button {
+    margin: 1% 0;
+    width: 100px;
+    padding: 5px;
+    /* flex: 0 1 100px; */
     position: relative;
+    border-radius: 10px;
+
 }
-footer > a {
-    position: absolute;
-    right: 0;
-    bottom: 0;
+
+footer>a {
     margin: 5px 10px;
+    font-size: 1rem;
 }

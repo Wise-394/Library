@@ -11,26 +11,28 @@
 
 <body>
     <dialog>
-        <button id ="close-button">X</button>
-        <form id ="form">
-            <div>
-                <label for="title">Book Title:</label>
-                <input type="text" id="title" name="title" required>
-            </div>
-            <div>
-                <label for="author">Author:</label>
-                <input type="text" id="author" name="author" required>
-            </div>
-            <div>
-                <label for="pages">Pages:</label>
-                <input type="number" id="pages" name="pages" required>
-            </div>
-            <div>
-                <label for="read">Read:</label>
-                <input type="checkbox" id="read" name="read" >
-            </div>
-            <button type="submit">Add</button>
-        </form>
+        <div>
+            <button id="close-button">X</button>
+            <form id="form">
+                <div>
+                    <label for="title">Book Title:</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div>
+                    <label for="author">Author:</label>
+                    <input type="text" id="author" name="author" required>
+                </div>
+                <div>
+                    <label for="pages">Pages:</label>
+                    <input type="number" id="pages" name="pages" required>
+                </div>
+                <div>
+                    <label for="read">Read:</label>
+                    <input type="checkbox" id="read" name="read">
+                </div>
+                <button type="submit">+</button>
+            </form>
+        </div>
     </dialog>
     <header>Library</header>
     <main>
@@ -47,7 +49,7 @@
         </div>
     </main>
     <footer>
-        <button id="open-modal">add</button>
+        <button id="open-modal">+</button>
         <a>https://github.com/Wise-394</a>
     </footer>
 </body>

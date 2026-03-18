@@ -110,11 +110,30 @@ class View {
         View.displayBook();
     }
 
+    static #validate(){
+        const title = document.querySelector("#title")
+        title.addEventListener("input", (event) => {
+            if (title.validity.tooShort){
+                title.setCustomValidity("Title too short")
+                title.reportValidity()
+            } else if (title.validity.tooLong){
+                title.setCustomValidity("Title too long")
+                title.reportValidity()
+            }
+             else {
+                title.setCustomValidity("")
+            } 
+        })
+    }
+
     static init() {
         this.openModalButton.addEventListener("click", () => this.openModal());
         this.form.addEventListener("submit", (e) => this.addBook(e));
         this.deleteButton.addEventListener("click", () => this.closeModal());
+
+        this.#validate()
     }
+
 }
 Library.addBookToLibrary("Example Book", "me", 100, true);
 View.init();

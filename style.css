@@ -103,6 +103,10 @@ form>div {
     justify-content: space-between;
     width: 100%;
 }
+form > span {
+    color: red;
+    font-style: italic;
+}
 
 
 dialog::backdrop {
@@ -133,4 +137,8 @@ footer>button {
 footer>a {
     margin: 5px 10px;
     font-size: 1rem;
+}
+
+.invalid {
+    border: red 1px solid
 }
